@@ -1,0 +1,10 @@
+$primary: rgba(194, 48, 61, 0.867);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: $primary;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

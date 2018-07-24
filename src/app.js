@@ -6,6 +6,8 @@ import './styles.scss';
 const logoStyles = {
   width: '100px',
 };
+
+
 const App = () => (
   <div>
     <h2>Toto React App Starter</h2>

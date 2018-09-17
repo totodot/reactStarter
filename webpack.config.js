@@ -1,9 +1,12 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const StyleLintWebpackPlugin = require('stylelint-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
   filename: './index.html',
 });
+
+const styleLintPlugin = new StyleLintWebpackPlugin();
 
 module.exports = {
   devtool: 'source-map',
@@ -11,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
       },
@@ -50,5 +53,8 @@ module.exports = {
       },
     ],
   },
-  plugins: [htmlPlugin],
+  plugins: [htmlPlugin, styleLintPlugin],
+  devServer: {
+    overlay: true,
+  },
 };
